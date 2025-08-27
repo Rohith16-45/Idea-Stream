@@ -1,0 +1,99 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --muted: #6c757d; /* Bootstrap default muted */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --muted: #bbbbbb; /* lighter gray for readability */
+  }
+
+  html {
+    color-scheme: dark; /* let browser adjust scrollbars, form controls */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navbar */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background-color: #1a1a1a !important;
+  }
+  .navbar .nav-link,
+  .navbar-brand {
+    color: #ffffff !important;
+  }
+  .navbar .nav-link:hover {
+    color: #0d6efd !important; /* Bootstrap primary */
+  }
+  .navbar .nav-link.active {
+    color: #0d6efd !important; /* active = blue */
+    font-weight: 600; /* optional: make it bold */
+  }
+}
+
+/* Cards */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: #1e1e1e !important;
+    color: var(--foreground) !important;
+    border: 1px solid #333;
+  }
+  .card-title {
+    color: #ffffff !important;
+  }
+  .card-text {
+    color: #cccccc !important; /* softer than title */
+  }
+}
+
+/* Inputs */
+@media (prefers-color-scheme: dark) {
+  .form-control {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+    border: 1px solid #333 !important;
+  }
+  .form-control::placeholder {
+    color: #aaaaaa;
+  }
+}
+
+/* Buttons */
+@media (prefers-color-scheme: dark) {
+  .btn-primary {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+  }
+  .btn-outline-danger {
+    color: #ff6b6b !important;
+    border-color: #ff6b6b !important;
+  }
+  .btn-outline-danger:hover {
+    background-color: #ff6b6b !important;
+    color: #fff !important;
+  }
+  .btn-outline-warning {
+    color: #ffcc00 !important;
+    border-color: #ffcc00 !important;
+  }
+  .btn-outline-warning:hover {
+    background-color: #ffcc00 !important;
+    color: #000 !important;
+  }
+}
+
+/* Muted text (e.g., .lead.text-muted) */
+.text-muted {
+  color: var(--muted) !important;
+}
