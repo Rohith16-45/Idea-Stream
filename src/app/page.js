@@ -1,9 +1,27 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check initial system preference
+    const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    setIsDarkMode(darkModeQuery.matches);
+
+    // Listen for changes
+    const handleChange = (e) => {
+      setIsDarkMode(e.matches);
+    };
+    darkModeQuery.addEventListener("change", handleChange);
+
+    return () => {
+      darkModeQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
+
   return (
     <div className="container text-center" style={{ marginTop: "100px" }}>
       {/* Hero Section */}
@@ -21,13 +39,15 @@ export default function Home() {
           </Link>
         </div>
 
+        {/* Right Image Section */}
         <div className="col-md-6 text-center">
           <Image
-            src="/Idea stream.jpg"
+            src={isDarkMode ? "/dark.png" : "/lighter.png"}
             alt="Illustration"
             className="img-fluid"
             width={400}
             height={300}
+            priority
           />
         </div>
       </div>

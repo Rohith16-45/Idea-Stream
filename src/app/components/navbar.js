@@ -9,7 +9,7 @@ export default function Navigation() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link className="navbar-brand fw-bold" href="/">
-          Idia Stream
+          IDEA STREAM
         </Link>
 
         <button
