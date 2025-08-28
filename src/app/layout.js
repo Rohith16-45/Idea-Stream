@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navigation from "./components/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+
 import Footer from "./components/footer";
 import "./globals.css";
 
